@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../../../shared/widgets/pawn_icon.dart';
 
 class AppDrawer extends StatelessWidget {
   const AppDrawer({super.key});
@@ -86,7 +87,7 @@ class AppDrawer extends StatelessWidget {
           ),
         ),
         ListTile(
-          leading: const Icon(Icons.timer_outlined),
+          leading: const PawnIcon(),
           title: const Text('Quick Play'),
           trailing: const Icon(Icons.chevron_right),
           onTap: () {
@@ -95,7 +96,7 @@ class AppDrawer extends StatelessWidget {
           },
         ),
         ListTile(
-          leading: const Icon(Icons.cases_outlined),
+          leading: const PawnIcon(),
           title: const Text('Custom Game'),
           trailing: const Icon(Icons.chevron_right),
           onTap: () {
