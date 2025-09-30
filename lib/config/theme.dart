@@ -5,18 +5,18 @@ class ChessdUpTheme {
   // Custom color scheme
   static const ColorScheme lightColorScheme = ColorScheme(
     brightness: Brightness.light,
-    primary: Color(0xFF2D3047), // Deep Navy
+    primary: Color(0xFF2196F3), // Blue accent
     onPrimary: Colors.white,
-    primaryContainer: Color(0xFFE6E8FF),
-    onPrimaryContainer: Color(0xFF2D3047),
-    secondary: Color(0xFF9E7B9B), // Dusty Rose
+    primaryContainer: Color(0xFFBBDEFB),
+    onPrimaryContainer: Color(0xFF0D47A1),
+    secondary: Color(0xFF42A5F5), // Lighter Blue
     onSecondary: Colors.white,
-    secondaryContainer: Color(0xFFFFD8ED),
-    onSecondaryContainer: Color(0xFF3B2837),
-    tertiary: Color(0xFFAD8A64), // Warm Gold
+    secondaryContainer: Color(0xFFE3F2FD),
+    onSecondaryContainer: Color(0xFF1565C0),
+    tertiary: Color(0xFF64B5F6), // Even Lighter Blue
     onTertiary: Colors.white,
-    tertiaryContainer: Color(0xFFFFDCC1),
-    onTertiaryContainer: Color(0xFF3B2837),
+    tertiaryContainer: Color(0xFFE1F5FE),
+    onTertiaryContainer: Color(0xFF1976D2),
     error: Color(0xFFBA1A1A),
     onError: Colors.white,
     errorContainer: Color(0xFFFFDAD6),
@@ -31,18 +31,18 @@ class ChessdUpTheme {
 
   static const ColorScheme darkColorScheme = ColorScheme(
     brightness: Brightness.dark,
-    primary: Color(0xFF9BA4FF), // Soft Blue
-    onPrimary: Color(0xFF2D3047),
-    primaryContainer: Color(0xFF444869),
-    onPrimaryContainer: Color(0xFFE6E8FF),
-    secondary: Color(0xFFE8B7D7), // Light Pink
-    onSecondary: Color(0xFF5B3B57),
-    secondaryContainer: Color(0xFF744B70),
-    onSecondaryContainer: Color(0xFFFFD8ED),
-    tertiary: Color(0xFFDFBC94), // Soft Gold
-    onTertiary: Color(0xFF422B06),
-    tertiaryContainer: Color(0xFF5D401B),
-    onTertiaryContainer: Color(0xFFFFDCC1),
+    primary: Color(0xFF90CAF9), // Light Blue
+    onPrimary: Color(0xFF0D47A1),
+    primaryContainer: Color(0xFF1976D2),
+    onPrimaryContainer: Color(0xFFE3F2FD),
+    secondary: Color(0xFF64B5F6), // Lighter Blue
+    onSecondary: Color(0xFF1565C0),
+    secondaryContainer: Color(0xFF1E88E5),
+    onSecondaryContainer: Color(0xFFE1F5FE),
+    tertiary: Color(0xFF42A5F5), // Medium Blue
+    onTertiary: Color(0xFF0D47A1),
+    tertiaryContainer: Color(0xFF1565C0),
+    onTertiaryContainer: Color(0xFFBBDEFB),
     error: Color(0xFFFFB4AB),
     onError: Color(0xFF690005),
     errorContainer: Color(0xFF93000A),
