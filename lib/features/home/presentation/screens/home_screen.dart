@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+import '../widgets/home_content.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -12,11 +13,11 @@ class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 2; // Center item selected by default
 
   final List<Widget> _screens = [
-    const Center(child: Text('Play')),
-    const Center(child: Text('Learn')),
-    const Center(child: Text('Home')),
-    const Center(child: Text('Social')),
-    const Center(child: Text('Profile')),
+    const Center(child: Text('Play')), // TODO: Implement Play screen
+    const Center(child: Text('Learn')), // TODO: Implement Learn screen
+    const HomeContent(), // Home screen
+    const Center(child: Text('Social')), // TODO: Implement Social screen
+    const Center(child: Text('Profile')), // TODO: Implement Profile screen
   ];
 
   @override
