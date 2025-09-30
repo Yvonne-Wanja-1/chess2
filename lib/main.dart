@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:provider/provider.dart';
-import 'package:chessd_up/config/theme.dart';
-import 'package:chessd_up/config/constants.dart';
-import 'package:chessd_up/features/auth/presentation/screens/splash_screen.dart';
+import './config/theme.dart';
+import './config/constants.dart';
+import './features/auth/presentation/screens/splash_screen.dart';
 
-void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+void main() {
   runApp(const ChessdUpApp());
 }
 

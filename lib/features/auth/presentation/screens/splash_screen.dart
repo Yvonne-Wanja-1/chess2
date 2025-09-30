@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:chessd_up/config/constants.dart';
+import '../../../../config/constants.dart';
+import '../../../home/presentation/screens/home_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -19,10 +20,9 @@ class _SplashScreenState extends State<SplashScreen> {
     await Future.delayed(const Duration(seconds: 2));
     if (!mounted) return;
 
-    // TODO: Implement navigation to appropriate screen based on auth state
-    // Navigator.of(context).pushReplacement(
-    //   MaterialPageRoute(builder: (context) => const AuthScreen()),
-    // );
+    Navigator.of(context).pushReplacement(
+      MaterialPageRoute(builder: (context) => const HomeScreen()),
+    );
   }
 
   @override
