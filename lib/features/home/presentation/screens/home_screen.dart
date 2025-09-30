@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import '../widgets/home_content.dart';
+import '../widgets/app_drawer.dart';
+import '../../../play/presentation/screens/play_screen.dart';
+import '../../../learn/presentation/screens/learn_screen.dart';
+import '../../../social/presentation/screens/social_screen.dart';
+import '../../../profile/presentation/screens/profile_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -12,12 +17,12 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 2; // Center item selected by default
 
-  final List<Widget> _screens = [
-    const Center(child: Text('Play')), // TODO: Implement Play screen
-    const Center(child: Text('Learn')), // TODO: Implement Learn screen
-    const HomeContent(), // Home screen
-    const Center(child: Text('Social')), // TODO: Implement Social screen
-    const Center(child: Text('Profile')), // TODO: Implement Profile screen
+  final List<Widget> _screens = const [
+    PlayScreen(),
+    LearnScreen(),
+    HomeContent(),
+    SocialScreen(),
+    ProfileScreen(),
   ];
 
   @override
@@ -34,91 +39,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ],
       ),
-      drawer: Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: [
-            DrawerHeader(
-              decoration: BoxDecoration(
-                color: Theme.of(context).colorScheme.primary,
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const CircleAvatar(
-                    radius: 40,
-                    backgroundImage: AssetImage(
-                      'assets/images/default_avatar.png',
-                    ),
-                  ),
-                  const SizedBox(height: 10),
-                  Text(
-                    'Guest User',
-                    style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                      color: Theme.of(context).colorScheme.onPrimary,
-                    ),
-                  ),
-                  Text(
-                    'Rating: 1200',
-                    style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                      color: Theme.of(context).colorScheme.onPrimary,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            ListTile(
-              leading: const Icon(Icons.emoji_events_outlined),
-              title: const Text('Tournaments'),
-              onTap: () {
-                // TODO: Navigate to tournaments
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              leading: const Icon(Icons.school_outlined),
-              title: const Text('Training'),
-              onTap: () {
-                // TODO: Navigate to training
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              leading: const Icon(Icons.groups_outlined),
-              title: const Text('Teams'),
-              onTap: () {
-                // TODO: Navigate to teams
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              leading: const Icon(Icons.analytics_outlined),
-              title: const Text('Stats'),
-              onTap: () {
-                // TODO: Navigate to stats
-                Navigator.pop(context);
-              },
-            ),
-            const Divider(),
-            ListTile(
-              leading: const Icon(Icons.settings_outlined),
-              title: const Text('Settings'),
-              onTap: () {
-                // TODO: Navigate to settings
-                Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              leading: const Icon(Icons.help_outline),
-              title: const Text('Help & Support'),
-              onTap: () {
-                // TODO: Navigate to help
-                Navigator.pop(context);
-              },
-            ),
-          ],
-        ),
-      ),
+      drawer: const AppDrawer(),
       body: _screens[_selectedIndex],
       bottomNavigationBar: CurvedNavigationBar(
         index: _selectedIndex,

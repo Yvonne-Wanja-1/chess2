@@ -5,18 +5,18 @@ class ChessdUpTheme {
   // Custom color scheme
   static const ColorScheme lightColorScheme = ColorScheme(
     brightness: Brightness.light,
-    primary: Color(0xFF2D3047), // Deep Navy
+    primary: Color(0xFF2196F3), // Blue accent
     onPrimary: Colors.white,
-    primaryContainer: Color(0xFFE6E8FF),
-    onPrimaryContainer: Color(0xFF2D3047),
-    secondary: Color(0xFF9E7B9B), // Dusty Rose
+    primaryContainer: Color(0xFFBBDEFB),
+    onPrimaryContainer: Color(0xFF0D47A1),
+    secondary: Color(0xFF42A5F5), // Lighter Blue
     onSecondary: Colors.white,
-    secondaryContainer: Color(0xFFFFD8ED),
-    onSecondaryContainer: Color(0xFF3B2837),
-    tertiary: Color(0xFFAD8A64), // Warm Gold
+    secondaryContainer: Color(0xFFE3F2FD),
+    onSecondaryContainer: Color(0xFF1565C0),
+    tertiary: Color(0xFF64B5F6), // Even Lighter Blue
     onTertiary: Colors.white,
-    tertiaryContainer: Color(0xFFFFDCC1),
-    onTertiaryContainer: Color(0xFF3B2837),
+    tertiaryContainer: Color(0xFFE1F5FE),
+    onTertiaryContainer: Color(0xFF1976D2),
     error: Color(0xFFBA1A1A),
     onError: Colors.white,
     errorContainer: Color(0xFFFFDAD6),
@@ -31,28 +31,28 @@ class ChessdUpTheme {
 
   static const ColorScheme darkColorScheme = ColorScheme(
     brightness: Brightness.dark,
-    primary: Color(0xFF9BA4FF), // Soft Blue
-    onPrimary: Color(0xFF2D3047),
-    primaryContainer: Color(0xFF444869),
-    onPrimaryContainer: Color(0xFFE6E8FF),
-    secondary: Color(0xFFE8B7D7), // Light Pink
-    onSecondary: Color(0xFF5B3B57),
-    secondaryContainer: Color(0xFF744B70),
-    onSecondaryContainer: Color(0xFFFFD8ED),
-    tertiary: Color(0xFFDFBC94), // Soft Gold
-    onTertiary: Color(0xFF422B06),
-    tertiaryContainer: Color(0xFF5D401B),
-    onTertiaryContainer: Color(0xFFFFDCC1),
+    primary: Color(0xFF1976D2), // Strong Blue
+    onPrimary: Color(0xFFFFFFFF),
+    primaryContainer: Color(0xFFE3F2FD),
+    onPrimaryContainer: Color(0xFF0D47A1),
+    secondary: Color(0xFF1565C0), // Deep Blue
+    onSecondary: Color(0xFFFFFFFF),
+    secondaryContainer: Color(0xFFE1F5FE),
+    onSecondaryContainer: Color(0xFF0D47A1),
+    tertiary: Color(0xFF0D47A1), // Darkest Blue
+    onTertiary: Color(0xFFFFFFFF),
+    tertiaryContainer: Color(0xFFBBDEFB),
+    onTertiaryContainer: Color(0xFF0D47A1),
     error: Color(0xFFFFB4AB),
     onError: Color(0xFF690005),
     errorContainer: Color(0xFF93000A),
     onErrorContainer: Color(0xFFFFB4AB),
-    background: Color(0xFF1A1C1E), // Dark Gray
-    onBackground: Color(0xFFE3E2E6),
-    surface: Color(0xFF1A1C1E),
-    onSurface: Color(0xFFE3E2E6),
-    surfaceVariant: Color(0xFF49454F),
-    onSurfaceVariant: Color(0xFFCAC4D0),
+    background: Color(0xFFFAFAFA), // Light Gray-White
+    onBackground: Color(0xFF1E2937),
+    surface: Color(0xFFFFFFFF), // Pure White
+    onSurface: Color(0xFF1E2937),
+    surfaceVariant: Color(0xFFF0F0F0), // Light Gray
+    onSurfaceVariant: Color(0xFF49454F),
   );
 
   static ThemeData get lightTheme {
