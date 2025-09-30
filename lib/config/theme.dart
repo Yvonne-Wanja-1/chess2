@@ -31,28 +31,28 @@ class ChessdUpTheme {
 
   static const ColorScheme darkColorScheme = ColorScheme(
     brightness: Brightness.dark,
-    primary: Color(0xFF90CAF9), // Light Blue
-    onPrimary: Color(0xFF0D47A1),
-    primaryContainer: Color(0xFF1976D2),
-    onPrimaryContainer: Color(0xFFE3F2FD),
-    secondary: Color(0xFF64B5F6), // Lighter Blue
-    onSecondary: Color(0xFF1565C0),
-    secondaryContainer: Color(0xFF1E88E5),
-    onSecondaryContainer: Color(0xFFE1F5FE),
-    tertiary: Color(0xFF42A5F5), // Medium Blue
-    onTertiary: Color(0xFF0D47A1),
-    tertiaryContainer: Color(0xFF1565C0),
-    onTertiaryContainer: Color(0xFFBBDEFB),
+    primary: Color(0xFF1976D2), // Strong Blue
+    onPrimary: Color(0xFFFFFFFF),
+    primaryContainer: Color(0xFFE3F2FD),
+    onPrimaryContainer: Color(0xFF0D47A1),
+    secondary: Color(0xFF1565C0), // Deep Blue
+    onSecondary: Color(0xFFFFFFFF),
+    secondaryContainer: Color(0xFFE1F5FE),
+    onSecondaryContainer: Color(0xFF0D47A1),
+    tertiary: Color(0xFF0D47A1), // Darkest Blue
+    onTertiary: Color(0xFFFFFFFF),
+    tertiaryContainer: Color(0xFFBBDEFB),
+    onTertiaryContainer: Color(0xFF0D47A1),
     error: Color(0xFFFFB4AB),
     onError: Color(0xFF690005),
     errorContainer: Color(0xFF93000A),
     onErrorContainer: Color(0xFFFFB4AB),
-    background: Color(0xFF1A1C1E), // Dark Gray
-    onBackground: Color(0xFFE3E2E6),
-    surface: Color(0xFF1A1C1E),
-    onSurface: Color(0xFFE3E2E6),
-    surfaceVariant: Color(0xFF49454F),
-    onSurfaceVariant: Color(0xFFCAC4D0),
+    background: Color(0xFFFAFAFA), // Light Gray-White
+    onBackground: Color(0xFF1E2937),
+    surface: Color(0xFFFFFFFF), // Pure White
+    onSurface: Color(0xFF1E2937),
+    surfaceVariant: Color(0xFFF0F0F0), // Light Gray
+    onSurfaceVariant: Color(0xFF49454F),
   );
 
   static ThemeData get lightTheme {
