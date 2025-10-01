@@ -91,8 +91,8 @@ class AppDrawer extends StatelessWidget {
           title: const Text('Quick Play'),
           trailing: const Icon(Icons.chevron_right),
           onTap: () {
-            // TODO: Navigate to quick play
             Navigator.pop(context);
+            Navigator.pushNamed(context, '/quick-play');
           },
         ),
         ListTile(
@@ -127,24 +127,24 @@ class AppDrawer extends StatelessWidget {
           title: const Text('Tournaments'),
           trailing: _buildNewBadge(context),
           onTap: () {
-            // TODO: Navigate to tournaments
             Navigator.pop(context);
+            Navigator.pushNamed(context, '/tournaments');
           },
         ),
         ListTile(
           leading: const Icon(Icons.school_outlined),
           title: const Text('Training'),
           onTap: () {
-            // TODO: Navigate to training
             Navigator.pop(context);
+            Navigator.pushNamed(context, '/training');
           },
         ),
         ListTile(
           leading: const Icon(Icons.analytics_outlined),
           title: const Text('Stats & Analysis'),
           onTap: () {
-            // TODO: Navigate to stats
             Navigator.pop(context);
+            Navigator.pushNamed(context, '/stats');
           },
         ),
       ],
@@ -170,8 +170,8 @@ class AppDrawer extends StatelessWidget {
           title: const Text('Teams'),
           trailing: _buildNewBadge(context),
           onTap: () {
-            // TODO: Navigate to teams
             Navigator.pop(context);
+            Navigator.pushNamed(context, '/teams');
           },
         ),
         ListTile(
@@ -187,8 +187,8 @@ class AppDrawer extends StatelessWidget {
           title: const Text('Messages'),
           trailing: _buildMessageCount(context, 3),
           onTap: () {
-            // TODO: Navigate to messages
             Navigator.pop(context);
+            Navigator.pushNamed(context, '/messages');
           },
         ),
       ],
@@ -202,8 +202,8 @@ class AppDrawer extends StatelessWidget {
           leading: const Icon(Icons.settings_outlined),
           title: const Text('Settings'),
           onTap: () {
-            // TODO: Navigate to settings
             Navigator.pop(context);
+            Navigator.pushNamed(context, '/settings');
           },
         ),
         ListTile(

@@ -16,6 +16,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   int _selectedIndex = 2; // Center item selected by default
 
   final List<Widget> _screens = const [
@@ -29,12 +30,13 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey,
       appBar: AppBar(
         title: const Text('Chess\'d Up'),
         leading: IconButton(
           icon: const Icon(Icons.menu),
           onPressed: () {
-            Scaffold.of(context).openDrawer();
+            _scaffoldKey.currentState?.openDrawer();
           },
         ),
         actions: [
