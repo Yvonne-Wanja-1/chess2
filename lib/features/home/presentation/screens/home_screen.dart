@@ -6,7 +6,6 @@ import '../../../play/presentation/screens/play_screen.dart';
 import '../../../learn/presentation/screens/learn_screen.dart';
 import '../../../social/presentation/screens/social_screen.dart';
 import '../../../profile/presentation/screens/profile_screen.dart';
-import '../../../../shared/widgets/pawn_icon.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -49,7 +48,7 @@ class _HomeScreenState extends State<HomeScreen> {
         buttonBackgroundColor: Theme.of(context).colorScheme.primary,
         height: 60,
         items: const [
-          PawnIcon(color: Colors.white), // Chess piece for play
+          Icon(Icons.sports_esports, color: Colors.white), // Game icon for play
           Icon(Icons.school, color: Colors.white), // Keep school for learn
           Icon(Icons.home, color: Colors.white), // Keep home for home
           Icon(Icons.people, color: Colors.white), // Keep people for social
