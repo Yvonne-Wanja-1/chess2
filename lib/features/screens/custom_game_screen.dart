@@ -1,7 +1,18 @@
 import 'package:flutter/material.dart';
+import './game_screen.dart';
 
-class CustomGameScreen extends StatelessWidget {
+class CustomGameScreen extends StatefulWidget {
   const CustomGameScreen({super.key});
+
+  @override
+  State<CustomGameScreen> createState() => _CustomGameScreenState();
+}
+
+class _CustomGameScreenState extends State<CustomGameScreen> {
+  String _selectedMode = 'Standard';
+  double _initialTime = 30;
+  double _increment = 10;
+  String _selectedOpponent = '';
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +31,15 @@ class CustomGameScreen extends StatelessWidget {
             const SizedBox(height: 32),
             ElevatedButton(
               onPressed: () {
-                // TODO: Start custom game
+                if (_selectedOpponent.isEmpty) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(
+                      content: Text('Please select an opponent type'),
+                    ),
+                  );
+                  return;
+                }
+                _startGame(context, _selectedOpponent);
               },
               child: const Padding(
                 padding: EdgeInsets.all(16.0),
@@ -49,24 +68,36 @@ class CustomGameScreen extends StatelessWidget {
                   'Standard',
                   'Classical chess rules',
                   Icons.casino,
-                  true,
-                  (val) {},
+                  _selectedMode == 'Standard',
+                  (val) {
+                    setState(() {
+                      _selectedMode = 'Standard';
+                    });
+                  },
                 ),
                 _buildRadioTile(
                   context,
                   'Fischer Random',
                   'Random piece placement',
                   Icons.shuffle,
-                  false,
-                  (val) {},
+                  _selectedMode == 'Fischer Random',
+                  (val) {
+                    setState(() {
+                      _selectedMode = 'Fischer Random';
+                    });
+                  },
                 ),
                 _buildRadioTile(
                   context,
                   'Crazyhouse',
                   'Captured pieces can be dropped back',
                   Icons.style,
-                  false,
-                  (val) {},
+                  _selectedMode == 'Crazyhouse',
+                  (val) {
+                    setState(() {
+                      _selectedMode = 'Crazyhouse';
+                    });
+                  },
                 ),
               ],
             ),
@@ -90,19 +121,27 @@ class CustomGameScreen extends StatelessWidget {
                 _buildSliderWithLabel(
                   context,
                   'Initial Time (minutes)',
-                  30,
+                  _initialTime,
                   1,
                   60,
-                  (value) {},
+                  (value) {
+                    setState(() {
+                      _initialTime = value;
+                    });
+                  },
                 ),
                 const SizedBox(height: 16),
                 _buildSliderWithLabel(
                   context,
                   'Increment (seconds)',
-                  10,
+                  _increment,
                   0,
                   30,
-                  (value) {},
+                  (value) {
+                    setState(() {
+                      _increment = value;
+                    });
+                  },
                 ),
               ],
             ),
@@ -129,7 +168,13 @@ class CustomGameScreen extends StatelessWidget {
                 title: const Text('Computer'),
                 subtitle: const Text('Play against AI'),
                 trailing: const Icon(Icons.chevron_right),
-                onTap: () {},
+                onTap: () {
+                  setState(() {
+                    _selectedOpponent = 'computer';
+                  });
+                  _startGame(context, 'Computer');
+                },
+                selected: _selectedOpponent == 'computer',
               ),
               const Divider(),
               ListTile(
@@ -140,7 +185,13 @@ class CustomGameScreen extends StatelessWidget {
                 title: const Text('Invite Friend'),
                 subtitle: const Text('Play with a friend'),
                 trailing: const Icon(Icons.chevron_right),
-                onTap: () {},
+                onTap: () {
+                  setState(() {
+                    _selectedOpponent = 'friend';
+                  });
+                  _showInviteFriendDialog(context);
+                },
+                selected: _selectedOpponent == 'friend',
               ),
               const Divider(),
               ListTile(
@@ -151,7 +202,13 @@ class CustomGameScreen extends StatelessWidget {
                 title: const Text('Open Challenge'),
                 subtitle: const Text('Anyone can join'),
                 trailing: const Icon(Icons.chevron_right),
-                onTap: () {},
+                onTap: () {
+                  setState(() {
+                    _selectedOpponent = 'open';
+                  });
+                  _startGame(context, 'Open Challenge');
+                },
+                selected: _selectedOpponent == 'open',
               ),
             ],
           ),
@@ -175,6 +232,60 @@ class CustomGameScreen extends StatelessWidget {
       value: true,
       groupValue: selected,
       onChanged: onChanged,
+    );
+  }
+
+  void _showInviteFriendDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: const Text('Invite Friend'),
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            TextField(
+              decoration: const InputDecoration(
+                labelText: 'Friend\'s Username',
+                hintText: 'Enter username',
+              ),
+            ),
+            const SizedBox(height: 16),
+            Text(
+              'Game Settings',
+              style: Theme.of(context).textTheme.titleMedium,
+            ),
+            Text(
+              'Mode: $_selectedMode\nTime: ${_initialTime.toInt()} min + ${_increment.toInt()} sec',
+              textAlign: TextAlign.center,
+            ),
+          ],
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: const Text('Cancel'),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.pop(context);
+              _startGame(context, 'Friend');
+            },
+            child: const Text('Send Invite'),
+          ),
+        ],
+      ),
+    );
+  }
+
+  void _startGame(BuildContext context, String opponentType) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => GameScreen(
+          gameMode: _selectedMode,
+          timeControl: _initialTime.toInt(),
+        ),
+      ),
     );
   }
 

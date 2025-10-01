@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import './game_screen.dart';
 
 class QuickPlayScreen extends StatelessWidget {
   const QuickPlayScreen({super.key});
@@ -18,7 +19,13 @@ class QuickPlayScreen extends StatelessWidget {
               'Fast-paced 5-minute chess game',
               Icons.bolt,
               () {
-                // TODO: Start 5-minute game
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        const GameScreen(gameMode: 'Blitz', timeControl: 5),
+                  ),
+                );
               },
             ),
             const SizedBox(height: 16),
@@ -28,7 +35,13 @@ class QuickPlayScreen extends StatelessWidget {
               'Standard 10-minute chess game',
               Icons.timer,
               () {
-                // TODO: Start 10-minute game
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        const GameScreen(gameMode: 'Rapid', timeControl: 10),
+                  ),
+                );
               },
             ),
             const SizedBox(height: 16),
@@ -38,7 +51,15 @@ class QuickPlayScreen extends StatelessWidget {
               'Traditional 30-minute chess game',
               Icons.hourglass_empty,
               () {
-                // TODO: Start 30-minute game
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const GameScreen(
+                      gameMode: 'Classical',
+                      timeControl: 30,
+                    ),
+                  ),
+                );
               },
             ),
           ],
