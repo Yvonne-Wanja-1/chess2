@@ -100,8 +100,8 @@ class AppDrawer extends StatelessWidget {
           title: const Text('Custom Game'),
           trailing: const Icon(Icons.chevron_right),
           onTap: () {
-            // TODO: Navigate to custom game
             Navigator.pop(context);
+            Navigator.pushNamed(context, '/custom-game');
           },
         ),
       ],
@@ -178,8 +178,8 @@ class AppDrawer extends StatelessWidget {
           leading: const Icon(Icons.person_add_outlined),
           title: const Text('Find Players'),
           onTap: () {
-            // TODO: Navigate to player search
             Navigator.pop(context);
+            Navigator.pushNamed(context, '/find-players');
           },
         ),
         ListTile(
@@ -210,8 +210,8 @@ class AppDrawer extends StatelessWidget {
           leading: const Icon(Icons.help_outline),
           title: const Text('Help & Support'),
           onTap: () {
-            // TODO: Navigate to help
             Navigator.pop(context);
+            Navigator.pushNamed(context, '/help');
           },
         ),
       ],
