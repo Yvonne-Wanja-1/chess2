@@ -6,6 +6,7 @@ import '../../../play/presentation/screens/play_screen.dart';
 import '../../../learn/presentation/screens/learn_screen.dart';
 import '../../../social/presentation/screens/social_screen.dart';
 import '../../../profile/presentation/screens/profile_screen.dart';
+import '../../../../shared/widgets/chess_knight_icon.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -30,6 +31,12 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Chess\'d Up'),
+        leading: IconButton(
+          icon: const Icon(Icons.menu),
+          onPressed: () {
+            Scaffold.of(context).openDrawer();
+          },
+        ),
         actions: [
           IconButton(
             icon: const Icon(Icons.notifications_outlined),
@@ -48,11 +55,11 @@ class _HomeScreenState extends State<HomeScreen> {
         buttonBackgroundColor: Theme.of(context).colorScheme.primary,
         height: 60,
         items: const [
-          Icon(Icons.sports_esports, color: Colors.white), // Game icon for play
-          Icon(Icons.school, color: Colors.white), // Keep school for learn
-          Icon(Icons.home, color: Colors.white), // Keep home for home
-          Icon(Icons.people, color: Colors.white), // Keep people for social
-          Icon(Icons.person, color: Colors.white), // Keep person for profile
+          ChessKnightIcon(color: Colors.white, size: 24),
+          Icon(Icons.school, color: Colors.white),
+          Icon(Icons.home, color: Colors.white),
+          Icon(Icons.people, color: Colors.white),
+          Icon(Icons.person, color: Colors.white),
         ],
         onTap: (index) {
           setState(() {
