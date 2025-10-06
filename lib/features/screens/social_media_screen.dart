@@ -7,9 +7,7 @@ class SocialMediaScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Social Connect'),
-      ),
+      appBar: AppBar(title: const Text('Social Connect')),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -38,7 +36,11 @@ class SocialMediaScreen extends StatelessWidget {
                 CircleAvatar(
                   radius: 30,
                   backgroundColor: Theme.of(context).primaryColor,
-                  child: const Icon(Icons.person, size: 40, color: Colors.white),
+                  child: const Icon(
+                    Icons.person,
+                    size: 40,
+                    color: Colors.white,
+                  ),
                 ),
                 const SizedBox(width: 16),
                 Expanded(
@@ -49,7 +51,9 @@ class SocialMediaScreen extends StatelessWidget {
                         'Share Your Game',
                         style: Theme.of(context).textTheme.titleLarge,
                       ),
-                      const Text('Let your friends know about your chess journey!'),
+                      const Text(
+                        'Let your friends know about your chess journey!',
+                      ),
                     ],
                   ),
                 ),
@@ -209,8 +213,13 @@ class SocialMediaScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildSocialButton(BuildContext context, String title, IconData icon,
-      Color color, VoidCallback onPressed) {
+  Widget _buildSocialButton(
+    BuildContext context,
+    String title,
+    IconData icon,
+    Color color,
+    VoidCallback onPressed,
+  ) {
     return InkWell(
       onTap: onPressed,
       child: Column(
@@ -221,30 +230,33 @@ class SocialMediaScreen extends StatelessWidget {
             child: Icon(icon, color: color),
           ),
           const SizedBox(height: 4),
-          Text(
-            title,
-            style: Theme.of(context).textTheme.bodySmall,
-          ),
+          Text(title, style: Theme.of(context).textTheme.bodySmall),
         ],
       ),
     );
   }
 
-  Widget _buildSocialLink(BuildContext context, String title, IconData icon,
-      String handle, VoidCallback onPressed) {
+  Widget _buildSocialLink(
+    BuildContext context,
+    String title,
+    IconData icon,
+    String handle,
+    VoidCallback onPressed,
+  ) {
     return ListTile(
       leading: Icon(icon),
       title: Text(title),
       subtitle: Text(handle),
-      trailing: TextButton(
-        onPressed: onPressed,
-        child: const Text('FOLLOW'),
-      ),
+      trailing: TextButton(onPressed: onPressed, child: const Text('FOLLOW')),
     );
   }
 
   Widget _buildCommunityPost(
-      BuildContext context, String image, String title, String likes) {
+    BuildContext context,
+    String image,
+    String title,
+    String likes,
+  ) {
     return Card(
       margin: const EdgeInsets.symmetric(horizontal: 8),
       child: Container(
@@ -259,19 +271,11 @@ class SocialMediaScreen extends StatelessWidget {
                 color: Theme.of(context).primaryColor.withOpacity(0.1),
                 borderRadius: BorderRadius.circular(8),
               ),
-              child: const Center(
-                child: Icon(Icons.photo, size: 40),
-              ),
+              child: const Center(child: Icon(Icons.photo, size: 40)),
             ),
             const SizedBox(height: 8),
-            Text(
-              title,
-              style: const TextStyle(fontWeight: FontWeight.bold),
-            ),
-            Text(
-              likes,
-              style: Theme.of(context).textTheme.bodySmall,
-            ),
+            Text(title, style: const TextStyle(fontWeight: FontWeight.bold)),
+            Text(likes, style: Theme.of(context).textTheme.bodySmall),
           ],
         ),
       ),

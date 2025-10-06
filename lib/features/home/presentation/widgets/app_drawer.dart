@@ -200,6 +200,14 @@ class AppDrawer extends StatelessWidget {
             Navigator.pushNamed(context, '/roast');
           },
         ),
+        ListTile(
+          leading: const Icon(Icons.share_outlined),
+          title: const Text('Social Connect'),
+          onTap: () {
+            Navigator.pop(context);
+            Navigator.pushNamed(context, '/social');
+          },
+        ),
       ],
     );
   }
