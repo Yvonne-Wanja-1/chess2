@@ -66,21 +66,21 @@ class SocialMediaScreen extends StatelessWidget {
                 _buildSocialButton(
                   context,
                   'X (Twitter)',
-                  Icons.flutter_dash,
+                  'assets/images/x.png',
                   Colors.black,
                   () => _shareToTwitter(context),
                 ),
                 _buildSocialButton(
                   context,
                   'Instagram',
-                  Icons.camera_alt,
+                  'assets/images/instagram.png',
                   Colors.purple,
                   () => _shareToInstagram(context),
                 ),
                 _buildSocialButton(
                   context,
                   'WhatsApp',
-                  Icons.whatsapp,
+                  'assets/images/whatsapp.png',
                   Colors.green,
                   () => _shareToWhatsApp(context),
                 ),
@@ -111,7 +111,7 @@ class SocialMediaScreen extends StatelessWidget {
               _buildSocialLink(
                 context,
                 'Follow us on X (Twitter)',
-                Icons.flutter_dash,
+                'assets/images/x.png',
                 '@ChessdUp',
                 () => _launchURL('https://twitter.com/chessdUp'),
               ),
@@ -119,7 +119,7 @@ class SocialMediaScreen extends StatelessWidget {
               _buildSocialLink(
                 context,
                 'Follow us on Instagram',
-                Icons.camera_alt,
+                'assets/images/instagram.png',
                 '@chessdUp',
                 () => _launchURL('https://instagram.com/chessdUp'),
               ),
@@ -127,7 +127,7 @@ class SocialMediaScreen extends StatelessWidget {
               _buildSocialLink(
                 context,
                 'Join WhatsApp Community',
-                Icons.whatsapp,
+                'assets/images/whatsapp.png',
                 'Chess\'d Up Community',
                 () => _launchURL('https://whatsapp.com/group/chessdUp'),
               ),
@@ -216,7 +216,7 @@ class SocialMediaScreen extends StatelessWidget {
   Widget _buildSocialButton(
     BuildContext context,
     String title,
-    IconData icon,
+    String imagePath,
     Color color,
     VoidCallback onPressed,
   ) {
@@ -227,7 +227,10 @@ class SocialMediaScreen extends StatelessWidget {
           CircleAvatar(
             radius: 25,
             backgroundColor: color.withOpacity(0.1),
-            child: Icon(icon, color: color),
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Image.asset(imagePath),
+            ),
           ),
           const SizedBox(height: 4),
           Text(title, style: Theme.of(context).textTheme.bodySmall),
@@ -239,12 +242,12 @@ class SocialMediaScreen extends StatelessWidget {
   Widget _buildSocialLink(
     BuildContext context,
     String title,
-    IconData icon,
+    String imagePath,
     String handle,
     VoidCallback onPressed,
   ) {
     return ListTile(
-      leading: Icon(icon),
+      leading: SizedBox(width: 24, height: 24, child: Image.asset(imagePath)),
       title: Text(title),
       subtitle: Text(handle),
       trailing: TextButton(onPressed: onPressed, child: const Text('FOLLOW')),

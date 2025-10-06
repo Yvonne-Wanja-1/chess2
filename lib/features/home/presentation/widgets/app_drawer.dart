@@ -208,6 +208,31 @@ class AppDrawer extends StatelessWidget {
             Navigator.pushNamed(context, '/social');
           },
         ),
+        ListTile(
+          leading: const Icon(Icons.emoji_events_outlined),
+          title: const Text('Achievements & Rankings'),
+          trailing: _buildNewBadge(context),
+          onTap: () {
+            Navigator.pop(context);
+            Navigator.pushNamed(context, '/achievements');
+          },
+        ),
+        ListTile(
+          leading: const Icon(Icons.visibility_outlined),
+          title: const Text('Watch Live Games'),
+          onTap: () {
+            Navigator.pop(context);
+            Navigator.pushNamed(context, '/spectator');
+          },
+        ),
+        ListTile(
+          leading: const Icon(Icons.face_outlined),
+          title: const Text('Customize Avatar'),
+          onTap: () {
+            Navigator.pop(context);
+            Navigator.pushNamed(context, '/avatar');
+          },
+        ),
       ],
     );
   }
