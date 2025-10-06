@@ -12,6 +12,7 @@ import './features/screens/messages_screen.dart';
 import './features/screens/settings_screen.dart';
 import './features/screens/help_support_screen.dart';
 import './features/screens/find_players_screen.dart';
+import './features/screens/roast_screen.dart';
 
 void main() {
   runApp(const ChessdUpApp());
@@ -40,6 +41,7 @@ class ChessdUpApp extends StatelessWidget {
         '/settings': (context) => const SettingsScreen(),
         '/help': (context) => const HelpSupportScreen(),
         '/find-players': (context) => const FindPlayersScreen(),
+        '/roast': (context) => const RoastScreen(),
       },
     );
   }
