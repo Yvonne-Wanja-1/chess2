@@ -191,6 +191,15 @@ class AppDrawer extends StatelessWidget {
             Navigator.pushNamed(context, '/messages');
           },
         ),
+        ListTile(
+          leading: const Icon(Icons.emoji_emotions_outlined),
+          title: const Text('Roast Arena'),
+          trailing: _buildNewBadge(context),
+          onTap: () {
+            Navigator.pop(context);
+            Navigator.pushNamed(context, '/roast');
+          },
+        ),
       ],
     );
   }
