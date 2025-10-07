@@ -17,6 +17,9 @@ import './features/screens/social_media_screen.dart';
 import './features/social/screens/achievements_screen.dart';
 import './features/social/screens/spectator_screen.dart';
 import './features/social/screens/avatar_customization_screen.dart';
+import './features/screens/daily_puzzle_screen.dart';
+import './features/screens/chess_learning_hub_screen.dart';
+import './features/screens/chess_events_screen.dart';
 
 void main() {
   runApp(const ChessdUpApp());
@@ -50,6 +53,9 @@ class ChessdUpApp extends StatelessWidget {
         '/achievements': (context) => const AchievementsScreen(),
         '/spectator': (context) => const SpectatorScreen(),
         '/avatar': (context) => const AvatarCustomizationScreen(),
+        '/daily-puzzle': (context) => const DailyPuzzleScreen(),
+        '/learning-hub': (context) => const ChessLearningHubScreen(),
+        '/events': (context) => const ChessEventsScreen(),
       },
     );
   }

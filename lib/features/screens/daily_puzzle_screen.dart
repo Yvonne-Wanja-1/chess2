@@ -81,15 +81,9 @@ class _DailyPuzzleScreenState extends State<DailyPuzzleScreen> {
             const SizedBox(height: 4),
             Text(
               value,
-              style: const TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-              ),
+              style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
-            Text(
-              title,
-              style: Theme.of(context).textTheme.bodySmall,
-            ),
+            Text(title, style: Theme.of(context).textTheme.bodySmall),
           ],
         ),
       ),
@@ -104,9 +98,7 @@ class _DailyPuzzleScreenState extends State<DailyPuzzleScreen> {
           Container(
             height: 300,
             color: Colors.grey[200],
-            child: const Center(
-              child: Text('Chess Board Puzzle Here'),
-            ),
+            child: const Center(child: Text('Chess Board Puzzle Here')),
           ),
           Padding(
             padding: const EdgeInsets.all(16),
@@ -187,19 +179,10 @@ class _DailyPuzzleScreenState extends State<DailyPuzzleScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
-                emoji,
-                style: const TextStyle(fontSize: 24),
-              ),
+              Text(emoji, style: const TextStyle(fontSize: 24)),
               const SizedBox(height: 8),
-              Text(
-                title,
-                style: const TextStyle(fontWeight: FontWeight.bold),
-              ),
-              Text(
-                count,
-                style: Theme.of(context).textTheme.bodySmall,
-              ),
+              Text(title, style: const TextStyle(fontWeight: FontWeight.bold)),
+              Text(count, style: Theme.of(context).textTheme.bodySmall),
             ],
           ),
         ),
@@ -224,9 +207,7 @@ class _DailyPuzzleScreenState extends State<DailyPuzzleScreen> {
           itemCount: 5,
           itemBuilder: (context, index) {
             return ListTile(
-              leading: CircleAvatar(
-                child: Text('${index + 1}'),
-              ),
+              leading: CircleAvatar(child: Text('${index + 1}')),
               title: Text('Player ${index + 1}'),
               subtitle: Text('Rating: ${2000 - index * 100}'),
               trailing: Text('${500 - index * 50} solved'),

@@ -147,6 +147,32 @@ class AppDrawer extends StatelessWidget {
             Navigator.pushNamed(context, '/stats');
           },
         ),
+        ListTile(
+          leading: const Icon(Icons.extension_outlined),
+          title: const Text('Daily Puzzles'),
+          trailing: _buildNewBadge(context),
+          onTap: () {
+            Navigator.pop(context);
+            Navigator.pushNamed(context, '/daily-puzzle');
+          },
+        ),
+        ListTile(
+          leading: const Icon(Icons.school_outlined),
+          title: const Text('Learning Hub'),
+          trailing: _buildNewBadge(context),
+          onTap: () {
+            Navigator.pop(context);
+            Navigator.pushNamed(context, '/learning-hub');
+          },
+        ),
+        ListTile(
+          leading: const Icon(Icons.event_outlined),
+          title: const Text('Events'),
+          onTap: () {
+            Navigator.pop(context);
+            Navigator.pushNamed(context, '/events');
+          },
+        ),
       ],
     );
   }
